@@ -1,2 +1,2 @@
 # Blink
-a partner in crime, helping you with 
+Blink is a desk companion meant to help its user montir his desk hour offering interactive features using BME280.
