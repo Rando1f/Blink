@@ -24,5 +24,5 @@ the next step was fairly easy as it was th wiring using an esp32-WROOM-32 as the
 
 
 GND: GND, 3V3: VCC, D21: SDA, D22: SCL
-
+---
 ### Day 2 - animating the mascot
