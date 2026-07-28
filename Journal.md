@@ -1,10 +1,11 @@
 ---
-title: BLINK
-author: Rando1f
-description: a desk companion montiring desk time with an artistic flair
-created_at: 27 / 7 / 2026
+Title: BLINK
+Author: Rando1f
+Description: a desk companion montiring desk time with an artistic flair
+Created_at: 27 / 7 / 2026
 ---
 #### Total time spent: 6 hours
+---
 ### Day 1 - getting started
 
 Day one was primarily utilized through understanding the fundamentals of C and C++ Mainly void setup and void loop to understand how code is written and how I could write it in the future in order to use it properly, this was paired with acquiring knowledge about libraries as I begin understanding the GFX and SSD1306 libraries. 
