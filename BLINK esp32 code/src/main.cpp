@@ -4,16 +4,18 @@
 #include <Adafruit_SSD1306.h> // static image library
 #include <Adafruit_GFX.h>
 
-#include <AnimatedGIF.h> //this is the library that handels the animated GIFs 
-
-#include <SPI.h>
-#include <TFT_eSPI.h> // required for the animated gifs library
-
 #define SCREEN_WIDTH 128 
 #define SCREEN_HEIGHT 64 
 
 #define OLED_RESET    -1
 #define SCREEN_ADDR   0x3C
+
+
+#define SOUND_SPEED 0.034
+#define CM_TO_INCH 0.393701
+
+const int TRIG_PIN = 5;
+const int ECHO_PIN = 18;
 
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
@@ -1625,6 +1627,10 @@ const uint8_t PROGMEM frame23[1024] = {
   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0a, 0xaa, 0xaa, 0xa8, 0x00
 };
 
+long duration;
+float distanceCm;
+float distanceInch;
+
 void setup() {
   Serial.begin(115200);
   if (!display.begin(SSD1306_SWITCHCAPVCC, SCREEN_ADDR)) {
@@ -1634,6 +1640,9 @@ void setup() {
   display.setRotation(0);
   display.clearDisplay();
   display.display();
+
+  pinMode(TRIG_PIN, OUTPUT);
+  pinMode(ECHO_PIN, INPUT);
 }
 
 void loop() {
@@ -1647,6 +1656,26 @@ void loop() {
     display.drawBitmap(0, 0, frames[frameIdx], 128, 64, SSD1306_WHITE);
     display.display();
     frameIdx = (frameIdx + 1) % numFrames;
+
+      
+  digitalWrite(TRIG_PIN, LOW);
+  delayMicroseconds(2);
+  digitalWrite(TRIG_PIN, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(TRIG_PIN, LOW);
+  
+  duration = pulseIn(ECHO_PIN, HIGH);
+  
+  distanceCm = duration * SOUND_SPEED/2;
+  
+  distanceInch = distanceCm * CM_TO_INCH;
+  
+  Serial.print("Distance (cm): ");
+  Serial.println(distanceCm);
+  Serial.print("Distance (inch): ");
+  Serial.println(distanceInch);
+  
+  delay(1000);
   }
 }
 
