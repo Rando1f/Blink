@@ -26,3 +26,16 @@ the next step was fairly easy as it was th wiring using an esp32-WROOM-32 as the
 GND: GND, 3V3: VCC, D21: SDA, D22: SCL
 ---
 ### Day 2 - animating the mascot
+Day 2 primarily focused on creating an idle animation GIF file following the construction of the mascot. The process of creating a GIF was straightforward, although it was tedious due to the downsizing of the actual mascot image. The mascot had to be redrawn with a lower resolution of 128x64, resulting in way fewer colors existing as well as a lot of details getting lost.
+
+which resulted in an unclear gif on the oled display due to the colors becoming monocramatic this was easily solved by enabling dithering.
+
+![dithering effect](<assests/Journal assests/comparison between dithering and not dithring.png>)
+
+this allows gradients to take place although it looks distorted at first glance it becomes very visable with small screens such as the one used in this project (I2C 0.96" oled display).
+
+The idle animation featured a breathing animation. The breathing animation featured a blinking animation, quite frankly, due to the whole project being named Blink, as well as the character going up and down. This is a technique used by most pixel art artists to give the illusion of breathing. 
+
+![idle animation ](<assests/Journal assests/Idle animation.gif>)
+
+the gif was drawn and animated using piskel a free open-source pixel animation editor.
