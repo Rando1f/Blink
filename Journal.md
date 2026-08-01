@@ -64,8 +64,8 @@ where R1 is the 220Ω connecting 2 breadboard columns together and R2 (the one c
 Day 3 mainly consisted of desiging multiple gif animations these gif animations included 
 <table>
 <tr>
-    <td width="30%">a confused animation while the mascot is still in "uniform".</td>
-    <td width="70%"> <img src="assests/Journal assests/'huh' animation (normal outfit).gif"></td>
+    <td width="60%">a confused animation while the mascot is still in "uniform".</td>
+    <td width="40%"> <img src="assests/Journal assests/'huh' animation (normal outfit).gif"></td>
 </tr>
 
 <tr>
@@ -74,23 +74,23 @@ Day 3 mainly consisted of desiging multiple gif animations these gif animations 
 </tr>
 
 <tr>
-    <td width="30%">a surprised animation where the mascot is surprised (after a prolonged session of desk use without standing up)</td>
-    <td width="70%"> <img src="assests/Journal assests/Surprised animation.gif"></td>
+    <td width="60%">a surprised animation where the mascot is surprised (after a prolonged session of desk use without standing up)</td>
+    <td width="40%"> <img src="assests/Journal assests/Surprised animation.gif"></td>
 </tr>
 
 <tr>
-    <td width="30%">a running animation when user has been working for sometime.</td>    
-    <td width="70%"> <img src="assests/Journal assests/Running animation.gif"></td>
+    <td width="60%">a running animation when user has been working for sometime.</td>    
+    <td width="40%"> <img src="assests/Journal assests/Running animation.gif"></td>
 
 </tr>
 <tr>
-    <td width="30%">a sleeping animation for when blink isn't active (the user is not near his desk for prolonged time)</td>
-    <td width="70%"> <img src="assests/Journal assests/sleeping animation.gif"></td>
+    <td width="60%">a sleeping animation for when blink isn't active (the user is not near his desk for prolonged time)</td>
+    <td width="40%"> <img src="assests/Journal assests/sleeping animation.gif"></td>
 </tr>
 
 <tr>
-    <td width="30%">a flaberrgasted animation when user spends alot of time using his desk generally
-    <td width="70%"> <img src="assests/Journal assests/falbergasted ( reached 8 hours of work ).gif"></td> 
+    <td width="60%">a flaberrgasted animation when user spends alot of time using his desk generally
+    <td width="40%"> <img src="assests/Journal assests/falbergasted ( reached 8 hours of work ).gif"></td> 
 </tr>
 </table>
 
