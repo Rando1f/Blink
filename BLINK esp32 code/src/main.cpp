@@ -1,21 +1,15 @@
-#include <Arduino.h> // the aurdino framework
+#include <Arduino.h>
 #include <Wire.h>
-
-#include <Adafruit_SSD1306.h> // static image library
+#include <Adafruit_SSD1306.h>
 #include <Adafruit_GFX.h>
 
 #define SCREEN_WIDTH 128 
 #define SCREEN_HEIGHT 64 
-
 #define OLED_RESET    -1
 #define SCREEN_ADDR   0x3C
 
-
-#define SOUND_SPEED 0.034
-#define CM_TO_INCH 0.393701
-
-const int TRIG_PIN = 5;
-const int ECHO_PIN = 18;
+#define TRIG_PIN 5
+#define ECHO_PIN 18
 
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
@@ -8354,62 +8348,225 @@ const uint8_t frame9_7[] PROGMEM = {
   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x15, 0x55, 0x55, 0xb0, 0x00
 };
 
+// creating arrays of pointers to the frames for each animation
+
+const uint8_t*idle_animation[] = {frame0, frame1, frame2, frame3, frame4, frame5, frame6, frame7, frame8, frame9, frame10, frame11, frame12, frame13, frame14, frame15, frame16, frame17, frame18, frame19, frame20, frame21, frame22, frame23};
+const uint8_t num_idle_frames = 24;
+
+const uint8_t*surprised_animation[] = {frame0_2, frame1_2, frame2_2, frame3_2, frame4_2, frame5_2, frame6_2, frame7_2};
+const uint8_t num_surprised_frames = 8;
+
+const uint8_t*running_animation[] = {frame10_2, frame11_2, frame12_2, frame13_2, frame14_2, frame15_2, frame16_2};
+const uint8_t num_running_frames = 7;
+
+const uint8_t*sleeping_animation[] = {frame0_3, frame1_3, frame2_3, frame3_3, frame4_3, frame5_3, frame6_3, frame7_3, frame8_3, frame9_3};
+const uint8_t num_sleeping_frames = 10;
+
+const uint8_t*why_in_oufit[] = {frame0_4, frame1_4, frame2_4, frame3_4, frame4_4, frame5_4, frame6_4, frame7_4, frame8_4, frame9_4, frame10_4, frame11_4, frame12_4, frame13_4, frame14_4, frame15_4, frame16_4, frame17_4};
+const uint8_t num_why_in_oufit_frames = 18;
+
+const uint8_t*where_did_you_go[] = {frame0_5, frame1_5, frame2_5, frame3_5, frame4_5, frame5_5, frame6_5, frame7_5, frame8_5, frame9_5, frame10_5, frame11_5, frame12_5, frame13_5, frame14_5};
+const uint8_t num_where_did_you_go_frames = 15;
+
+const uint8_t*omg_you_almost_made_me_cry[] = {frame0_6, frame1_6, frame2_6, frame3_6, frame4_6, frame5_6, frame6_6, frame7_6, frame8_6, frame9_6, frame10_6, frame11_6, frame12_6, frame13_6, frame14_6, frame15_6, frame16_6, frame17_6, frame18_6, frame19_6, frame20_6, frame21_6, frame22_6, frame23_6, frame24_6, frame25_6, frame26_6, frame27_6, frame28_6, frame29_6, frame30_6, frame31_6, frame32_6, frame33_6};
+const uint8_t num_omg_you_almost_made_me_cry_frames = 34;
+
+const uint8_t*flabergasted_animation[] = {frame0_7, frame1_7, frame2_7, frame3_7, frame4_7, frame5_7, frame6_7, frame7_7, frame8_7, frame9_7};
+const uint8_t num_flabergasted_frames = 10;
 
 
-long duration;
-float distanceCm;
-float distanceInch;
+unsigned long lastAnimMs = 0;
+int currentFrameIdx = 0;
+const int ANIMATION_DELAY_MS = 67; 
 
-void setup() {
-  Serial.begin(115200);
-  if (!display.begin(SSD1306_SWITCHCAPVCC, SCREEN_ADDR)) {
-    Serial.println(F("SSD1306 allocation failed"));
-    for (;;);
-  }
-  display.setRotation(0);
-  display.clearDisplay();
-  display.display();
+enum State {
+  IDLE,
+  RUNNING_ANIMATION,
+  SURPRISED_ANIMATION,
+  FLABERGASTED,
+  WHERE_DID_YOU_GO,
+  SLEEPING_ANIMATION,
+  WAKING_UP,
+  OMG_YOU_ALMOST_MADE_ME_CRY
+};
 
-  pinMode(TRIG_PIN, OUTPUT);
-  pinMode(ECHO_PIN, INPUT);
-}
+State currentState = IDLE;
+State previousState = IDLE; 
 
-void loop() {
-    static uint8_t frameIdx = 0;
-    static unsigned long lastMs = 0;
-    static unsigned long lastSonarMs = 0;  
+const unsigned long FIVE_MIN = 5 * 60 * 1000UL;
+const unsigned long TEN_MIN = 10 * 60 * 1000UL;
+const unsigned long TWO_HOURS = 2 * 60 * 60 * 1000UL;
+const unsigned long SIX_HOURS = 6 * 60 * 60 * 1000UL;
+const unsigned long ONE_HOUR = 1 * 60 * 60 * 1000UL;
 
+unsigned long stateEntryTime = 0;
+unsigned long runningAnimationCumulativeTime = 0;
+unsigned long distanceCheckStartTime = 0;
+float lastDistance = 0.0;
 
+const float DISTANCE_THRESHOLD_INCHES = 15.0;
 
-    const uint8_t* frames[] = {frame0_6, frame1_6, frame2_6, frame3_6, frame4_6, frame5_6, frame6_6, frame7_6, frame8_6, frame9_6, frame10_6, frame11_6, frame12_6, frame13_6, frame14_6, frame15_6, frame16_6, frame17_6, frame18_6, frame19_6, frame20_6, frame21_6, frame22_6, frame23_6, frame24_6, frame25_6, frame26_6, frame27_6, frame28_6, frame29_6};
-    const uint8_t numFrames = 30;
-    if (millis() - lastMs >= 67) {
-        lastMs = millis();
-        display.clearDisplay();
-        display.drawBitmap(0, 0, frames[frameIdx], 128, 64, SSD1306_WHITE);
-        display.display();
-        frameIdx = (frameIdx + 1) % numFrames;
-    }
+void playAnimation(const uint8_t** frames, uint8_t numFrames);
 
-    if (millis() - lastSonarMs >= 500) {
-        lastSonarMs = millis();
+void displayIdle() { playAnimation(idle_animation, num_idle_frames);}
+void displayRunningAnimation() {playAnimation(running_animation, num_running_frames);}
+void displaySurprisedAnimation() {playAnimation(surprised_animation, num_surprised_frames);}
+void displayFlabergasted() {playAnimation(flabergasted_animation, num_flabergasted_frames);}
+void displayWhereDidYouGo() {playAnimation(where_did_you_go, num_where_did_you_go_frames);}
+void displaySleepingAnimation() {playAnimation(sleeping_animation, num_sleeping_frames);}
+void displayWakingUp() {playAnimation(why_in_oufit, num_why_in_oufit_frames);}
+void displayOMGYOUALMOST_MADE_ME_CRY() {playAnimation(omg_you_almost_made_me_cry, num_omg_you_almost_made_me_cry_frames);}
 
-digitalWrite(TRIG_PIN, LOW);
+float getDistance() {
+  digitalWrite(TRIG_PIN, LOW);
   delayMicroseconds(2);
   digitalWrite(TRIG_PIN, HIGH);
   delayMicroseconds(10);
   digitalWrite(TRIG_PIN, LOW);
-  
-  duration = pulseIn(ECHO_PIN, HIGH);
-  
-  distanceCm = duration * SOUND_SPEED/2;
-  
-  distanceInch = distanceCm * CM_TO_INCH;
-  
-  Serial.print("Distance (cm): ");
-  Serial.println(distanceCm);
-  Serial.print("Distance (inch): ");
-  Serial.println(distanceInch);
-  
+
+  long duration = pulseIn(ECHO_PIN, HIGH, 30000); 
+
+  if (duration == 0) {
+    return 999.0;
+  }
+
+  float distanceInches = duration * 0.0133 / 2;
+  return distanceInches;
+}
+
+void setup() {
+  Serial.begin(115200);
+  Wire.begin();
+
+  pinMode(TRIG_PIN, OUTPUT);
+  pinMode(ECHO_PIN, INPUT);
+
+  if (!display.begin(SSD1306_SWITCHCAPVCC, SCREEN_ADDR)) {
+    Serial.println(F("SSD1306 allocation failed"));
+    for (;;);
+  }
+
+  display.display();
+  delay(2000);
+  display.clearDisplay();
+
+  stateEntryTime = millis();
+  distanceCheckStartTime = millis();
+}
+
+void loop() {
+  unsigned long currentTime = millis();
+  lastDistance = getDistance();
+
+  if (currentState != previousState) {
+    currentFrameIdx = 0;
+    lastAnimMs = currentTime;
+    previousState = currentState;
+  }
+
+  // State machine logic
+  switch (currentState) {
+    case IDLE:
+      displayIdle();
+      if (currentTime - distanceCheckStartTime >= TEN_MIN) {
+        if (lastDistance < DISTANCE_THRESHOLD_INCHES) {
+          currentState = RUNNING_ANIMATION;
+          stateEntryTime = currentTime;
+          runningAnimationCumulativeTime = 0;
+        } else if (lastDistance > DISTANCE_THRESHOLD_INCHES) {
+          currentState = WHERE_DID_YOU_GO;
+          stateEntryTime = currentTime;
+        }
+        distanceCheckStartTime = currentTime;
+      }
+      break;
+
+    case RUNNING_ANIMATION:
+      displayRunningAnimation();
+      runningAnimationCumulativeTime += (currentTime - stateEntryTime);
+      stateEntryTime = currentTime;
+
+      if (runningAnimationCumulativeTime >= SIX_HOURS) {
+        currentState = FLABERGASTED;
+        stateEntryTime = currentTime;
+      } else if (currentTime - stateEntryTime >= TWO_HOURS) {
+        currentState = SURPRISED_ANIMATION;
+        stateEntryTime = currentTime;
+      }
+      break;
+
+    case SURPRISED_ANIMATION:
+      displaySurprisedAnimation();
+      if (currentTime - stateEntryTime >= FIVE_MIN) {
+        currentState = IDLE;
+        stateEntryTime = currentTime;
+        distanceCheckStartTime = currentTime;
+      }
+      break;
+
+    case FLABERGASTED:
+      displayFlabergasted();
+      if (lastDistance < DISTANCE_THRESHOLD_INCHES && (currentTime - distanceCheckStartTime >= FIVE_MIN)) {
+        currentState = IDLE;
+        stateEntryTime = currentTime;
+        distanceCheckStartTime = currentTime;
+      }
+      break;
+
+    case WHERE_DID_YOU_GO:
+      displayWhereDidYouGo();
+      if (lastDistance < DISTANCE_THRESHOLD_INCHES && (currentTime - distanceCheckStartTime >= FIVE_MIN)) {
+        currentState = IDLE;
+        stateEntryTime = currentTime;
+        distanceCheckStartTime = currentTime;
+      } else if (lastDistance > DISTANCE_THRESHOLD_INCHES && (currentTime - stateEntryTime >= TEN_MIN)) {
+        currentState = SLEEPING_ANIMATION;
+        stateEntryTime = currentTime;
+      }
+      break;
+
+    case SLEEPING_ANIMATION:
+      displaySleepingAnimation();
+      if (lastDistance < DISTANCE_THRESHOLD_INCHES && (currentTime - distanceCheckStartTime >= FIVE_MIN)) {
+        currentState = IDLE;
+        stateEntryTime = currentTime;
+        distanceCheckStartTime = currentTime;
+      } else if (lastDistance < DISTANCE_THRESHOLD_INCHES && (currentTime - stateEntryTime >= FIVE_MIN)) {
+        currentState = WAKING_UP;
+        stateEntryTime = currentTime;
+      } else if (lastDistance > DISTANCE_THRESHOLD_INCHES && (currentTime - stateEntryTime >= ONE_HOUR)) {
+        currentState = WAKING_UP;
+        stateEntryTime = currentTime;
+      }
+      break;
+
+    case WAKING_UP:
+      displayWakingUp();
+      if (currentTime - stateEntryTime >= FIVE_MIN) {
+        currentState = OMG_YOU_ALMOST_MADE_ME_CRY;
+        stateEntryTime = currentTime;
+      }
+      break;
+
+    case OMG_YOU_ALMOST_MADE_ME_CRY:
+      displayOMGYOUALMOST_MADE_ME_CRY();
+      if (lastDistance < DISTANCE_THRESHOLD_INCHES && (currentTime - distanceCheckStartTime >= FIVE_MIN)) {
+        currentState = IDLE;
+        stateEntryTime = currentTime;
+        distanceCheckStartTime = currentTime;
+      }
+      break;
+  }
+
+  delay(10);
+}
+
+void playAnimation(const uint8_t** frames, uint8_t numFrames) {
+  if (millis() - lastAnimMs >= ANIMATION_DELAY_MS) {
+    lastAnimMs = millis();
+    display.clearDisplay();
+    display.drawBitmap(0, 0, frames[currentFrameIdx], 128, 64, SSD1306_WHITE);
+    display.display();
+    currentFrameIdx = (currentFrameIdx + 1) % numFrames;
   }
 }
