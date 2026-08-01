@@ -67,36 +67,27 @@ Day 3 mainly consisted of desiging multiple gif animations these gif animations 
     <td width="30%">a confused animation while the mascot is still in "uniform".</td>
     <td width="70%"> <img src="assests/Journal assests/'huh' animation (normal outfit).gif"></td>
 </tr>
-</table>
 
-<table>
 <tr>
     <td width="30%">a confused animation as to why he was waken up.</td>
     <td width="70%"> <img src="assests/Journal assests/'huh' animation (pijames).gif"></td>
 </tr>
-</table>
-<table>
+
 <tr>
     <td width="30%">a surprised animation where the mascot is surprised (after a prolonged session of desk use without standing up)</td>
     <td width="70%"> <img src="assests/Journal assests/Surprised animation.gif"></td>
 </tr>
-</table>
-<table>
+
 <tr>
     <td width="30%">a running animation when user has been working for sometime.</td>    
     <td width="70%"> <img src="assests/Journal assests/Running animation.gif"></td>
 
 </tr>
-</table>
-<table>
 <tr>
     <td width="30%">a sleeping animation for when blink isn't active (the user is not near his desk for prolonged time)</td>
     <td width="70%"> <img src="assests/Journal assests/sleeping animation.gif"></td>
 </tr>
-</table>
 
-
-<table>
 <tr>
     <td width="30%">a flaberrgasted animation when user spends alot of time using his desk generally
     <td width="70%"> <img src="assests/Journal assests/falbergasted ( reached 8 hours of work ).gif"></td> 
