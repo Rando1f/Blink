@@ -101,8 +101,13 @@ these animation are going to be used conditionaly meaning that they are affected
 ### Day 4 - State machines
 after drawing the GIF it came down to changinig the charcter states based on diffrent interactive conditions this was done by identifying what each gif was for. this was done on two rounds the written pseudocode and the graphed pseudocode.
 the logic was done so that the idle state would be the starting state of any session and depending on the interactions it would follow the following logic tree:
-<p align="center"><img src="assests/Journal assests/State machine logic.png" width="500"></p>
+<p align="center"><img src="assests/Journal assests/State machine logic.png" width="400"></p>
 
 my first intution was using if conditions and for loops but i founded out that this wouldn't work due to the amount of if conditions and hierachel conditions it would be heavy on the esp32s' cpu and will take alot longer to code so i opted to using a state machine specifically a non-blocking state machine.
 
-state machines are alot easier as it doesn't require me to keep calling on the fram indevdualy as i used to do when testing the idle gif on day 2.
+state machines are alot easier as it doesn't require me to keep calling on the frame individually as i used to do when testing the idle gif on day 2. 
+<img src ="assests/Journal assests/image of the previous code.png">
+*sorry for the image begin a commit history it was taken after the code was changed :3
+
+this was done through assigning multiple frames to one array and recalling that array whenever needed whcih is faster and more effecient than calling the gif frame by frame.
+
