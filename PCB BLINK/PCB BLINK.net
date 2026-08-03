@@ -1,0 +1,1215 @@
+(export
+	(version "E")
+	(design
+		(source "C:\\Users\\Yusuf\\Documents\\GitHub\\Blink\\PCB BLINK\\PCB BLINK.kicad_sch")
+		(date "2026-08-03T02:49:52")
+		(tool "Eeschema 10.0.4")
+		(sheet
+			(number "1")
+			(name "/")
+			(tstamps "/")
+			(title_block
+				(title)
+				(company)
+				(rev)
+				(date)
+				(source "PCB BLINK.kicad_sch")
+				(comment
+					(number "1")
+					(value "")
+				)
+				(comment
+					(number "2")
+					(value "")
+				)
+				(comment
+					(number "3")
+					(value "")
+				)
+				(comment
+					(number "4")
+					(value "")
+				)
+				(comment
+					(number "5")
+					(value "")
+				)
+				(comment
+					(number "6")
+					(value "")
+				)
+				(comment
+					(number "7")
+					(value "")
+				)
+				(comment
+					(number "8")
+					(value "")
+				)
+				(comment
+					(number "9")
+					(value "")
+				)
+			)
+		)
+	)
+	(components
+		(comp
+			(ref "R1")
+			(value "220")
+			(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+			(description "Resistor")
+			(fields
+				(field
+					(name "Footprint") "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PCB BLINK.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "0730659a-b817-48ca-b4b2-4ce9d7161f13")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R2")
+			(value "330")
+			(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+			(description "Resistor")
+			(fields
+				(field
+					(name "Footprint") "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PCB BLINK.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "80a3216b-1767-4e21-9041-f42cf73471ec")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U1")
+			(value "~")
+			(footprint "ESP32_Footprints:ESP32_30pin")
+			(fields
+				(field
+					(name "Footprint") "ESP32_Footprints:ESP32_30pin")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "esp32_30pin_revised")
+				(part "ESP32_30Pin")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PCB BLINK.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "80ed40ae-fff7-468f-a9e1-ab6e9698615c")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "30")
+						)
+						(pin
+							(num "15")
+						)
+						(pin
+							(num "29")
+						)
+						(pin
+							(num "14")
+						)
+						(pin
+							(num "28")
+						)
+						(pin
+							(num "13")
+						)
+						(pin
+							(num "27")
+						)
+						(pin
+							(num "12")
+						)
+						(pin
+							(num "26")
+						)
+						(pin
+							(num "11")
+						)
+						(pin
+							(num "25")
+						)
+						(pin
+							(num "10")
+						)
+						(pin
+							(num "24")
+						)
+						(pin
+							(num "9")
+						)
+						(pin
+							(num "23")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "22")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "21")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "20")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "19")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "18")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "17")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "16")
+						)
+						(pin
+							(num "1")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U2")
+			(value "HC-SR04")
+			(footprint "HC-SRO4:XCVR_HC-SR04")
+			(description "HC-SR04 Ultrasonic Sensor Qwiic Platform Evaluation Expansion Board")
+			(fields
+				(field
+					(name "MF") "SparkFun Electronics")
+				(field
+					(name "Package") "None")
+				(field
+					(name "Price") "None")
+				(field
+					(name "Check_prices") "https://www.snapeda.com/parts/HC-SR04/SparkFun/view-part/?ref=eda")
+				(field
+					(name "SnapEDA_Link") "https://www.snapeda.com/parts/HC-SR04/SparkFun/view-part/?ref=snap")
+				(field
+					(name "MP") "HC-SR04")
+				(field
+					(name "Availability") "Not in stock")
+				(field
+					(name "MANUFACTURER") "Osepp")
+				(field
+					(name "Footprint") "HC-SRO4:XCVR_HC-SR04")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "HC-SR04 Ultrasonic Sensor Qwiic Platform Evaluation Expansion Board")
+			)
+			(libsource
+				(lib "HC-SR04")
+				(part "HC-SR04")
+				(description "HC-SR04 Ultrasonic Sensor Qwiic Platform Evaluation Expansion Board")
+			)
+			(property
+				(name "MF")
+				(value "SparkFun Electronics")
+			)
+			(property
+				(name "Package")
+				(value "None")
+			)
+			(property
+				(name "Price")
+				(value "None")
+			)
+			(property
+				(name "Check_prices")
+				(value "https://www.snapeda.com/parts/HC-SR04/SparkFun/view-part/?ref=eda")
+			)
+			(property
+				(name "SnapEDA_Link")
+				(value "https://www.snapeda.com/parts/HC-SR04/SparkFun/view-part/?ref=snap")
+			)
+			(property
+				(name "MP")
+				(value "HC-SR04")
+			)
+			(property
+				(name "Availability")
+				(value "Not in stock")
+			)
+			(property
+				(name "MANUFACTURER")
+				(value "Osepp")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PCB BLINK.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "f0e0ff5a-c504-481a-a828-3f6c2864fdd9")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U3")
+			(value "ER_OLEDM0.91_1x-I2C")
+			(footprint "Display:ER_OLEDM0.91_1x-I2C")
+			(datasheet "https://www.buydisplay.com/download/manual/ER-OLEDM0.91-1_Datasheet.pdf")
+			(description "SSD1306 OLED module, 0.91 inch, 128x32, I2C")
+			(fields
+				(field
+					(name "Footprint") "Display:ER_OLEDM0.91_1x-I2C")
+				(field
+					(name "Datasheet") "https://www.buydisplay.com/download/manual/ER-OLEDM0.91-1_Datasheet.pdf")
+				(field
+					(name "Description") "SSD1306 OLED module, 0.91 inch, 128x32, I2C")
+			)
+			(libsource
+				(lib "Display_Graphic")
+				(part "ER_OLEDM0.91_1x-I2C")
+				(description "SSD1306 OLED module, 0.91 inch, 128x32, I2C")
+			)
+			(property
+				(name "Sheetname")
+				(value "Root")
+			)
+			(property
+				(name "Sheetfile")
+				(value "PCB BLINK.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "EastRising")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "ER?OLEDM0.91?1x?I2C*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "c2f4388d-5fa2-4520-b2fb-ae9ee8777709")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "1")
+						)
+					)
+				)
+			)
+		)
+	)
+	(groups
+		(group
+			(name "")
+			(uuid "dff674da-a664-42a4-98e7-5f4e9e2fde08")
+			(lib_id "")
+			(members)
+		)
+		(group
+			(name "")
+			(uuid "c675822a-2ac7-4489-bf7f-47062622defc")
+			(lib_id "")
+			(members)
+		)
+	)
+	(variants)
+	(libparts
+		(libpart
+			(lib "Device")
+			(part "R")
+			(description "Resistor")
+			(footprints
+				(fp "R_*")
+			)
+			(fields
+				(field
+					(name "Reference") "R")
+				(field
+					(name "Value") "R")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Display_Graphic")
+			(part "ER_OLEDM0.91_1x-I2C")
+			(description "SSD1306 OLED module, 0.91 inch, 128x32, I2C")
+			(docs "https://www.buydisplay.com/download/manual/ER-OLEDM0.91-1_Datasheet.pdf")
+			(footprints
+				(fp "ER?OLEDM0.91?1x?I2C*")
+			)
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "ER_OLEDM0.91_1x-I2C")
+				(field
+					(name "Footprint") "Display:ER_OLEDM0.91_1x-I2C")
+				(field
+					(name "Datasheet") "https://www.buydisplay.com/download/manual/ER-OLEDM0.91-1_Datasheet.pdf")
+				(field
+					(name "Description") "SSD1306 OLED module, 0.91 inch, 128x32, I2C")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "2")
+					(name "VCC")
+					(type "power_in")
+				)
+				(pin
+					(num "3")
+					(name "SCL")
+					(type "input")
+				)
+				(pin
+					(num "4")
+					(name "SDA")
+					(type "bidirectional")
+				)
+			)
+		)
+		(libpart
+			(lib "HC-SR04")
+			(part "HC-SR04")
+			(description "HC-SR04 Ultrasonic Sensor Qwiic Platform Evaluation Expansion Board")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "HC-SR04")
+				(field
+					(name "Footprint") "HC-SR04:XCVR_HC-SR04")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "HC-SR04 Ultrasonic Sensor Qwiic Platform Evaluation Expansion Board")
+				(field
+					(name "MF") "SparkFun Electronics")
+				(field
+					(name "Package") "None")
+				(field
+					(name "Price") "None")
+				(field
+					(name "Check_prices") "https://www.snapeda.com/parts/HC-SR04/SparkFun/view-part/?ref=eda")
+				(field
+					(name "SnapEDA_Link") "https://www.snapeda.com/parts/HC-SR04/SparkFun/view-part/?ref=snap")
+				(field
+					(name "MP") "HC-SR04")
+				(field
+					(name "Availability") "Not in stock")
+				(field
+					(name "MANUFACTURER") "Osepp")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "VCC")
+					(type "power_in")
+				)
+				(pin
+					(num "2")
+					(name "TRIG")
+					(type "bidirectional")
+				)
+				(pin
+					(num "3")
+					(name "ECHO")
+					(type "bidirectional")
+				)
+				(pin
+					(num "4")
+					(name "GND")
+					(type "power_in")
+				)
+			)
+		)
+		(libpart
+			(lib "esp32_30pin_revised")
+			(part "ESP32_30Pin")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value")
+				)
+				(field
+					(name "Footprint") "ESP32_30pin")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "VIN")
+					(type "power_out")
+				)
+				(pin
+					(num "2")
+					(name "GND")
+					(type "bidirectional")
+				)
+				(pin
+					(num "3")
+					(name "GPIO13")
+					(type "bidirectional")
+				)
+				(pin
+					(num "4")
+					(name "GPIO12")
+					(type "bidirectional")
+				)
+				(pin
+					(num "5")
+					(name "GPIO14")
+					(type "bidirectional")
+				)
+				(pin
+					(num "6")
+					(name "GPIO27")
+					(type "bidirectional")
+				)
+				(pin
+					(num "7")
+					(name "GPIO26")
+					(type "bidirectional")
+				)
+				(pin
+					(num "8")
+					(name "GPIO25")
+					(type "bidirectional")
+				)
+				(pin
+					(num "9")
+					(name "GPIO33")
+					(type "bidirectional")
+				)
+				(pin
+					(num "10")
+					(name "GPIO32")
+					(type "bidirectional")
+				)
+				(pin
+					(num "11")
+					(name "GPIO35")
+					(type "bidirectional")
+				)
+				(pin
+					(num "12")
+					(name "GPIO34")
+					(type "bidirectional")
+				)
+				(pin
+					(num "13")
+					(name "GPIO39")
+					(type "bidirectional")
+				)
+				(pin
+					(num "14")
+					(name "GPIO36")
+					(type "bidirectional")
+				)
+				(pin
+					(num "15")
+					(name "EN")
+					(type "bidirectional")
+				)
+				(pin
+					(num "16")
+					(name "3.3v")
+					(type "output")
+				)
+				(pin
+					(num "17")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "18")
+					(name "GPIO15")
+					(type "bidirectional")
+				)
+				(pin
+					(num "19")
+					(name "GPIO2")
+					(type "bidirectional")
+				)
+				(pin
+					(num "20")
+					(name "GPIO4")
+					(type "bidirectional")
+				)
+				(pin
+					(num "21")
+					(name "GPIO16")
+					(type "bidirectional")
+				)
+				(pin
+					(num "22")
+					(name "GPIO17")
+					(type "bidirectional")
+				)
+				(pin
+					(num "23")
+					(name "GPIO5")
+					(type "bidirectional")
+				)
+				(pin
+					(num "24")
+					(name "GPIO18")
+					(type "bidirectional")
+				)
+				(pin
+					(num "25")
+					(name "GPIO19")
+					(type "bidirectional")
+				)
+				(pin
+					(num "26")
+					(name "GPIO21")
+					(type "bidirectional")
+				)
+				(pin
+					(num "27")
+					(name "GPIO3")
+					(type "bidirectional")
+				)
+				(pin
+					(num "28")
+					(name "GPIO1")
+					(type "bidirectional")
+				)
+				(pin
+					(num "29")
+					(name "GPIO22")
+					(type "bidirectional")
+				)
+				(pin
+					(num "30")
+					(name "GPIO23")
+					(type "bidirectional")
+				)
+			)
+		)
+	)
+	(libraries
+		(library
+			(logical "Device")
+			(uri "${KICAD10_SYMBOL_DIR}/Device.kicad_sym")
+		)
+		(library
+			(logical "Display_Graphic")
+			(uri "${KICAD10_SYMBOL_DIR}/Display_Graphic.kicad_sym")
+		)
+		(library
+			(logical "HC-SR04")
+			(uri "J:/PCB files/Symbols folder/HC-SR04.kicad_sym")
+		)
+		(library
+			(logical "esp32_30pin_revised")
+			(uri "C:/Users/Yusuf/Documents/GitHub/Blink/assests/PCB libraries/esp32_30pin_revised.kicad_sym")
+		)
+	)
+	(nets
+		(net
+			(code "1")
+			(name "+3.3V")
+			(class "Default")
+			(node
+				(ref "U3")
+				(pin "2")
+				(pinfunction "VCC_2")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "2")
+			(name "+5V")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "1")
+				(pinfunction "VCC_1")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "3")
+			(name "GND")
+			(class "Default")
+			(node
+				(ref "R2")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "4")
+				(pinfunction "GND_4")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U3")
+				(pin "1")
+				(pinfunction "GND_1")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "4")
+			(name "Net-(U1-GPIO5)")
+			(class "Default")
+			(node
+				(ref "R1")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R2")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "23")
+				(pinfunction "GPIO5_23")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "5")
+			(name "Net-(U1-GPIO18)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "24")
+				(pinfunction "GPIO18_24")
+				(pintype "bidirectional")
+			)
+			(node
+				(ref "U2")
+				(pin "2")
+				(pinfunction "TRIG_2")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "6")
+			(name "Net-(U1-GPIO21)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "26")
+				(pinfunction "GPIO21_26")
+				(pintype "bidirectional")
+			)
+			(node
+				(ref "U3")
+				(pin "4")
+				(pinfunction "SDA_4")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "7")
+			(name "Net-(U1-GPIO22)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "29")
+				(pinfunction "GPIO22_29")
+				(pintype "bidirectional")
+			)
+			(node
+				(ref "U3")
+				(pin "3")
+				(pinfunction "SCL_3")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "8")
+			(name "Net-(U2-ECHO)")
+			(class "Default")
+			(node
+				(ref "R1")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "3")
+				(pinfunction "ECHO_3")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "9")
+			(name "unconnected-(U1-3.3v-Pad16)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "16")
+				(pinfunction "3.3v_16")
+				(pintype "output+no_connect")
+			)
+		)
+		(net
+			(code "10")
+			(name "unconnected-(U1-EN-Pad15)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "15")
+				(pinfunction "EN_15")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "11")
+			(name "unconnected-(U1-GND-Pad2)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "2")
+				(pinfunction "GND_2")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "12")
+			(name "unconnected-(U1-GND-Pad17)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "17")
+				(pinfunction "GND_17")
+				(pintype "power_in+no_connect")
+			)
+		)
+		(net
+			(code "13")
+			(name "unconnected-(U1-GPIO1-Pad28)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "28")
+				(pinfunction "GPIO1_28")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "14")
+			(name "unconnected-(U1-GPIO2-Pad19)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "19")
+				(pinfunction "GPIO2_19")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "15")
+			(name "unconnected-(U1-GPIO3-Pad27)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "27")
+				(pinfunction "GPIO3_27")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "16")
+			(name "unconnected-(U1-GPIO4-Pad20)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "20")
+				(pinfunction "GPIO4_20")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "17")
+			(name "unconnected-(U1-GPIO12-Pad4)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "4")
+				(pinfunction "GPIO12_4")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "18")
+			(name "unconnected-(U1-GPIO13-Pad3)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "3")
+				(pinfunction "GPIO13_3")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "19")
+			(name "unconnected-(U1-GPIO14-Pad5)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "5")
+				(pinfunction "GPIO14_5")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "20")
+			(name "unconnected-(U1-GPIO15-Pad18)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "18")
+				(pinfunction "GPIO15_18")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "21")
+			(name "unconnected-(U1-GPIO16-Pad21)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "21")
+				(pinfunction "GPIO16_21")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "22")
+			(name "unconnected-(U1-GPIO17-Pad22)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "22")
+				(pinfunction "GPIO17_22")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "23")
+			(name "unconnected-(U1-GPIO19-Pad25)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "25")
+				(pinfunction "GPIO19_25")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "24")
+			(name "unconnected-(U1-GPIO23-Pad30)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "30")
+				(pinfunction "GPIO23_30")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "25")
+			(name "unconnected-(U1-GPIO25-Pad8)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "8")
+				(pinfunction "GPIO25_8")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "26")
+			(name "unconnected-(U1-GPIO26-Pad7)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "7")
+				(pinfunction "GPIO26_7")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "27")
+			(name "unconnected-(U1-GPIO27-Pad6)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "6")
+				(pinfunction "GPIO27_6")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "28")
+			(name "unconnected-(U1-GPIO32-Pad10)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "10")
+				(pinfunction "GPIO32_10")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "29")
+			(name "unconnected-(U1-GPIO33-Pad9)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "9")
+				(pinfunction "GPIO33_9")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "30")
+			(name "unconnected-(U1-GPIO34-Pad12)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "12")
+				(pinfunction "GPIO34_12")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "31")
+			(name "unconnected-(U1-GPIO35-Pad11)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "11")
+				(pinfunction "GPIO35_11")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "32")
+			(name "unconnected-(U1-GPIO36-Pad14)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "14")
+				(pinfunction "GPIO36_14")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "33")
+			(name "unconnected-(U1-GPIO39-Pad13)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "13")
+				(pinfunction "GPIO39_13")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "34")
+			(name "unconnected-(U1-VIN-Pad1)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "1")
+				(pinfunction "VIN_1")
+				(pintype "power_out+no_connect")
+			)
+		)
+	)
+)
