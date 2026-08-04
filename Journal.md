@@ -111,3 +111,10 @@ state machines are alot easier as it doesn't require me to keep calling on the f
 
 this was done through assigning multiple frames to one array and recalling that array whenever needed whcih is faster and more effecient than calling the gif frame by frame.
 
+### Day 5/6 - more state machine ?!
+today consisted mostly of fixing some of the bugs found in the state machine such as the flabergasted state being unreachable or the surprised animation being impossiable to reach.
+this was mostly due to incorrect logic as the time used to reach the surprised state was previously the current time or the entry time as the start time restarting the action meaning that it would endlessly run until flabergasted or it went to sleep/ the where did you go animation.
+this was fixed in the new ittiration making the flabergasted animatino occuer after 6 hours of running (the continounity of the runnning isn't a must) for 10 min. before defulting to idle.
+
+
+<p align="center"><img src = "assests/Journal assests/the new state machine logic.png" width="800"></p>
