@@ -524,7 +524,7 @@
     "last_paths": {
       "idf": "",
       "netlist": "PCB BLINK.net",
-      "plot": "",
+      "plot": "../production/PCB/",
       "specctra_dsn": "",
       "vrml": ""
     },
