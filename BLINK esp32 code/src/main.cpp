@@ -8616,11 +8616,8 @@ if (!flabergastedtriggered && currentTime >= six_hours) {
     case SLEEPING:{
       displaySleeping();
       unsigned long elapsed = currentTime - stateEntrytime;
-      float avgDistance = (distancesamplecount > 0) ? distancesum / distancesamplecount : lastdistance; 
       if (lastdistance < DISTANCE_THRESHOLD_INCHES) {
-        currentState = WHY_IN_OUTFIT;
-      } else if (elapsed >= ten_min) {
-        currentState = OMG_YOU_ALMOST_MADE_ME_CRY;
+        currentState = (elapsed < ten_min) ? WHY_IN_OUTFIT : OMG_YOU_ALMOST_MADE_ME_CRY;
       }
       break;
     }
@@ -8653,9 +8650,10 @@ if (!flabergastedtriggered && currentTime >= six_hours) {
   delay(10);
 }
 void drawelapsedtime(unsigned long elapsedMS, uint16_t color) {
-  unsigned long seconds = elapsedMS / 1000;
-  unsigned long minutes = (seconds % 3600) / 60;
-  unsigned long hours = seconds / 3600;
+  unsigned long totalseconds = elapsedMS / 1000;
+  unsigned long seconds = totalseconds % 60;
+  unsigned long minutes = (totalseconds % 3600) / 60;
+  unsigned long hours = totalseconds / 3600;
 
   char buf[9];
   snprintf(buf, sizeof(buf), "%02u:%02u:%02u", hours, minutes, seconds);
