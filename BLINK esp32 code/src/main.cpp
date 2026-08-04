@@ -8460,11 +8460,16 @@ enum State {
 State currentState = IDLE;
 State previousState = IDLE; 
 
-const unsigned long five_min = 5 * 60 * 1000UL;
-const unsigned long ten_min = 10 * 60 * 1000UL;
-const unsigned long two_hours = 2 * 60 * 60 * 1000UL;
-const unsigned long six_hours = 6 * 60 * 60 * 1000UL;
-const unsigned long one_hour = 1 * 60 * 60 * 1000UL;
+#define demo_mode 1
+#if demo_mode
+const float time_scale = 60.0;
+#else
+const float time_scale = 1.0;
+#endif
+  const unsigned long five_min = 5 * 60 * 1000UL / time_scale;
+  const unsigned long ten_min = 10 * 60 * 1000UL / time_scale;
+  const unsigned long two_hours = 2 * 60 * 60 * 1000UL / time_scale;
+  const unsigned long six_hours = 6 * 60 * 60 * 1000UL / time_scale;
 
 unsigned long stateEntrytime = 0;
 unsigned long runningstarts = 0;
@@ -8476,11 +8481,13 @@ float lastdistance = 0.0;
 float distancesum = 0.0;
 const float DISTANCE_THRESHOLD_INCHES = 15.0;
 
-//devlopment purposes (not relveant to the user but useful for testing yk)
 unsigned long lastDistanceCheckMs = 0;
 const int DISTANCE_CHECK_INTERVAL_MS = 60;
-//
 
+unsigned long lastPrintMS = 0;
+const unsigned long PRINT_INTERVAL_MS = 5000;
+
+bool flabergastedtriggered = false;
 bool playAnimation(const uint8_t** frames, uint8_t numFrames);
 
 bool displayIdle() { return playAnimation(idle_animation, num_idle_frames);}
@@ -8529,10 +8536,15 @@ stateEntrytime = millis();
 
 void loop() {
 
-
   unsigned long currentTime = millis();
   if (currentTime - lastDistanceCheckMs >= DISTANCE_CHECK_INTERVAL_MS) {
     lastdistance = getDistance();
+    lastDistanceCheckMs = currentTime;
+  }
+  if (currentTime - lastPrintMS >= PRINT_INTERVAL_MS) {
+    Serial.print("distance in inchs: ");
+    Serial.println(lastdistance);
+    lastPrintMS = currentTime;
   }
 
     distancesum += lastdistance;
@@ -8547,7 +8559,10 @@ void loop() {
     distancesum = 0.0;
     distancesamplecount = 0;
   }
-
+if (!flabergastedtriggered && currentTime >= six_hours) {
+    currentState = FLABERGASTED;
+    flabergastedtriggered = true;
+  }
 
 // THE LOVELY LOGIC T-T
   switch (currentState) {
@@ -8555,7 +8570,7 @@ void loop() {
       displayIdle();
       if (currentTime - stateEntrytime >= five_min) {
         float avgDistance = distancesum / distancesamplecount;
-        currentState = (avgDistance > DISTANCE_THRESHOLD_INCHES) ? WHY_IN_OUTFIT : RUNNING;
+        currentState = (avgDistance > DISTANCE_THRESHOLD_INCHES) ? WHERE_DID_YOU_GO : RUNNING;
         stateEntrytime = currentTime;
         distancesum = 0.0;
         distancesamplecount = 0;
@@ -8566,7 +8581,7 @@ void loop() {
       displayRunning();
         if (currentTime - runningstarts >= five_min) {
           float avgDistance = distancesum / distancesamplecount;
-          if (avgDistance > DISTANCE_THRESHOLD_INCHES) currentState = WHY_IN_OUTFIT;
+          if (avgDistance > DISTANCE_THRESHOLD_INCHES) currentState = WHERE_DID_YOU_GO;
           runningstarts = currentTime;
           distancesum = 0.0;
           distancesamplecount = 0;
@@ -8576,8 +8591,8 @@ void loop() {
         }
         break;
   }
-    case WHY_IN_OUTFIT:{
-      displayWHY_IN_OUTFIT();
+    case WHERE_DID_YOU_GO:{
+      displayWHERE_DID_YOU_GO();
       if (currentTime - stateEntrytime >= five_min) {
         float avgDistance = distancesum / distancesamplecount;
         currentState = (avgDistance > DISTANCE_THRESHOLD_INCHES) ? SLEEPING : RUNNING;
@@ -8587,11 +8602,11 @@ void loop() {
             }
       break;
   }
-    case WHERE_DID_YOU_GO:{
-      displayWHERE_DID_YOU_GO();
+    case WHY_IN_OUTFIT:{
+      displayWHY_IN_OUTFIT();
       if (currentTime - stateEntrytime >= five_min) {
         float avgDistance = distancesum / distancesamplecount;
-        if (avgDistance <= DISTANCE_THRESHOLD_INCHES) currentState = RUNNING;
+        currentState = (avgDistance <= DISTANCE_THRESHOLD_INCHES) ? RUNNING : SLEEPING;
         stateEntrytime = currentTime;
         distancesum = 0.0;
         distancesamplecount = 0;
@@ -8601,8 +8616,9 @@ void loop() {
     case SLEEPING:{
       displaySleeping();
       unsigned long elapsed = currentTime - stateEntrytime;
-      if (lastdistance < DISTANCE_THRESHOLD_INCHES && elapsed < ten_min) {
-        currentState = WHERE_DID_YOU_GO;
+      float avgDistance = (distancesamplecount > 0) ? distancesum / distancesamplecount : lastdistance; 
+      if (lastdistance < DISTANCE_THRESHOLD_INCHES) {
+        currentState = WHY_IN_OUTFIT;
       } else if (elapsed >= ten_min) {
         currentState = OMG_YOU_ALMOST_MADE_ME_CRY;
       }
@@ -8622,6 +8638,9 @@ void loop() {
     }
     case FLABERGASTED:{
       displayFlabergasted();
+      if (currentTime - stateEntrytime >= ten_min) {
+        currentState = IDLE;
+      }
       break;
     }
     case OMG_YOU_ALMOST_MADE_ME_CRY:{
@@ -8638,8 +8657,8 @@ void drawelapsedtime(unsigned long elapsedMS, uint16_t color) {
   unsigned long minutes = (seconds % 3600) / 60;
   unsigned long hours = seconds / 3600;
 
-  char buf[6];
-  snprintf(buf, sizeof(buf), "%02u:%02u", hours, minutes);
+  char buf[9];
+  snprintf(buf, sizeof(buf), "%02u:%02u:%02u", hours, minutes, seconds);
 
   display.setTextSize(1);
   display.setTextColor(color);
