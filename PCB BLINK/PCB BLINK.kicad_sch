@@ -145,174 +145,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Display_Graphic:ER_OLEDM0.91_1x-I2C"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "U"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "ER_OLEDM0.91_1x-I2C"
-				(at 14.224 -10.668 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "Display:ER_OLEDM0.91_1x-I2C"
-				(at 18.034 -12.7 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" "https://www.buydisplay.com/download/manual/ER-OLEDM0.91-1_Datasheet.pdf"
-				(at 42.672 -14.732 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "SSD1306 OLED module, 0.91 inch, 128x32, I2C"
-				(at 26.67 -16.764 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "EastRising"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "ER?OLEDM0.91?1x?I2C*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "ER_OLEDM0.91_1x-I2C_1_1"
-				(rectangle
-					(start -7.62 7.62)
-					(end 7.62 -7.62)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(pin power_in line
-					(at 0 -10.16 90)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 0 10.16 270)
-					(length 2.54)
-					(name "VCC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input clock
-					(at -10.16 2.54 0)
-					(length 2.54)
-					(name "SCL"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at -10.16 -2.54 0)
-					(length 2.54)
-					(name "SDA"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "HC-SR04:HC-SR04"
 			(pin_names
 				(offset 1.016)
@@ -555,6 +387,179 @@
 						(effects
 							(font
 								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "SSD1306 OLED 0.96{dblquote}:SSD1306"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "Brd"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SSD1306"
+				(at 0 -1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "SSD1306 OLED"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "SSD1306"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "SSD1306-128x64_OLED:SSD1306"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "SSD1306_0_1"
+				(rectangle
+					(start -6.35 6.35)
+					(end 6.35 -6.35)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "SSD1306_1_1"
+				(pin input line
+					(at -3.81 8.89 270)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -1.27 8.89 270)
+					(length 2.54)
+					(name "VCC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 1.27 8.89 270)
+					(length 2.54)
+					(name "SCL"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 3.81 8.89 270)
+					(length 2.54)
+					(name "SDA"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
 							)
 						)
 					)
@@ -1681,10 +1686,10 @@
 		)
 	)
 	(junction
-		(at 130.81 101.6)
+		(at 137.16 111.76)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "480a0253-1f09-410b-9e95-b24bb8f8d66e")
+		(uuid "7a466f30-61d6-498e-b541-d515b0935d89")
 	)
 	(junction
 		(at 133.35 81.28)
@@ -1812,13 +1817,13 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 109.22) (xy 149.86 109.22)
+			(xy 149.86 83.82) (xy 146.05 83.82)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "09212be4-ba44-488b-8277-c5c9fee62019")
+		(uuid "12be5c9f-0ee8-4a66-95cc-082cf29020f3")
 	)
 	(wire
 		(pts
@@ -1842,6 +1847,26 @@
 	)
 	(wire
 		(pts
+			(xy 146.05 83.82) (xy 146.05 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "36032300-122b-424f-9fb8-a1cbeea98b4b")
+	)
+	(wire
+		(pts
+			(xy 146.05 114.3) (xy 137.16 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "37e7d764-1c0a-4414-9818-3983694242c7")
+	)
+	(wire
+		(pts
 			(xy 142.24 101.6) (xy 149.86 101.6)
 		)
 		(stroke
@@ -1849,26 +1874,6 @@
 			(type default)
 		)
 		(uuid "3d2494c5-e925-4fda-86db-6a1d1f2918b9")
-	)
-	(wire
-		(pts
-			(xy 147.32 83.82) (xy 149.86 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "40160375-d5f5-4de3-9071-7103672e0a82")
-	)
-	(wire
-		(pts
-			(xy 118.11 93.98) (xy 147.32 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "44d4291b-db82-4bfb-a1b7-04d060b9a621")
 	)
 	(wire
 		(pts
@@ -1892,13 +1897,13 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 114.3) (xy 140.97 116.84)
+			(xy 137.16 109.22) (xy 137.16 111.76)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "8aa91f1f-615c-4e3d-a753-3d08cd6267c2")
+		(uuid "7a27aa3d-6322-4543-a6f4-c564fcbf1122")
 	)
 	(wire
 		(pts
@@ -1912,23 +1917,13 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 93.98) (xy 147.32 83.82)
+			(xy 137.16 116.84) (xy 149.86 116.84)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a118f410-7445-4b59-8116-855153ff0da6")
-	)
-	(wire
-		(pts
-			(xy 140.97 116.84) (xy 149.86 116.84)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a72a0932-9556-4545-9655-b0d411135f1b")
+		(uuid "a6fb4be9-54a1-4fdf-9076-a6131c2930f4")
 	)
 	(wire
 		(pts
@@ -1949,16 +1944,6 @@
 			(type default)
 		)
 		(uuid "ae6895fc-34f1-4c75-830c-8f749170bef0")
-	)
-	(wire
-		(pts
-			(xy 118.11 124.46) (xy 118.11 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b35e7297-d00c-4356-a79a-ff3e9cb49fda")
 	)
 	(wire
 		(pts
@@ -1983,6 +1968,36 @@
 	)
 	(wire
 		(pts
+			(xy 147.32 109.22) (xy 147.32 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c042c8d5-f555-47d7-b4b1-eedecf0e2c53")
+	)
+	(wire
+		(pts
+			(xy 149.86 109.22) (xy 147.32 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c04cae42-157d-4c40-b537-3756618dbaa7")
+	)
+	(wire
+		(pts
+			(xy 147.32 119.38) (xy 137.16 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c67f6073-b0fb-460b-ad98-b18f9a89dc01")
+	)
+	(wire
+		(pts
 			(xy 115.57 86.36) (xy 115.57 81.28)
 		)
 		(stroke
@@ -1991,36 +2006,6 @@
 			(color 0 0 0 1)
 		)
 		(uuid "c72ef02d-f0c3-456e-ac9f-da7b9f12d638")
-	)
-	(wire
-		(pts
-			(xy 123.19 101.6) (xy 130.81 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c95f06c1-7424-46f7-a561-9949d4cf64a0")
-	)
-	(wire
-		(pts
-			(xy 130.81 121.92) (xy 130.81 124.46)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ceb4a2b8-f125-4a6c-a979-0a9af7079759")
-	)
-	(wire
-		(pts
-			(xy 130.81 124.46) (xy 118.11 124.46)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d6b4a113-007b-4157-b4ed-cf685a6f7444")
 	)
 	(wire
 		(pts
@@ -2137,6 +2122,94 @@
 			(project "PCB BLINK"
 				(path "/045d4c76-b8e6-4e35-9741-edeedb73b92f"
 					(reference "R1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "SSD1306 OLED 0.96{dblquote}:SSD1306")
+		(at 128.27 115.57 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "31d8a719-6e9a-41f7-90ee-705cbc5d90c0")
+		(property "Reference" "Brd1"
+			(at 128.27 104.14 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SSD1306"
+			(at 128.27 106.68 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "SSD1306:128x64OLED"
+			(at 134.62 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 134.62 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "SSD1306 OLED"
+			(at 128.27 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "4"
+			(uuid "cd164fe8-4eef-47f2-ad99-9b69dabcd04d")
+		)
+		(pin "1"
+			(uuid "48eb1ea0-9b18-44d7-a9ae-f2f0e01e871d")
+		)
+		(pin "2"
+			(uuid "faa6a5f2-bd5b-4424-8945-006aaa0e29ed")
+		)
+		(pin "3"
+			(uuid "37dcf68b-081b-4aa1-b753-3063345e753c")
+		)
+		(instances
+			(project "PCB BLINK"
+				(path "/045d4c76-b8e6-4e35-9741-edeedb73b92f"
+					(reference "Brd1")
 					(unit 1)
 				)
 			)
@@ -2548,7 +2621,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 130.81 101.6 180)
+		(at 137.16 111.76 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2557,9 +2630,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "9b5d4816-5114-4bed-8a1f-c54c82c9e02e")
-		(property "Reference" "#PWR02"
-			(at 130.81 95.25 0)
+		(uuid "c5f48068-6773-4c0e-afb2-c71b84c7a257")
+		(property "Reference" "#PWR01"
+			(at 143.51 111.76 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2570,17 +2643,18 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 130.81 96.52 0)
+			(at 140.97 111.7599 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Footprint" ""
-			(at 130.81 101.6 0)
+			(at 137.16 111.76 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2591,7 +2665,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 130.81 101.6 0)
+			(at 137.16 111.76 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2602,7 +2676,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 130.81 101.6 0)
+			(at 137.16 111.76 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2613,12 +2687,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "e629955d-b362-4d66-9800-e31fb60e4b39")
+			(uuid "ab51cd26-3717-48a3-a25a-6cf0793486aa")
 		)
 		(instances
 			(project "PCB BLINK"
 				(path "/045d4c76-b8e6-4e35-9741-edeedb73b92f"
-					(reference "#PWR02")
+					(reference "#PWR01")
 					(unit 1)
 				)
 			)
@@ -2626,7 +2700,7 @@
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 123.19 101.6 0)
+		(at 137.16 109.22 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2634,9 +2708,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "b9366a06-0cbd-4c3f-b2ae-e0ef8503f6e0")
+		(uuid "de097930-21a4-4262-bf0a-a378c2c93e97")
 		(property "Reference" "#FLG01"
-			(at 123.19 99.695 0)
+			(at 137.16 107.315 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2647,17 +2721,18 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 123.19 97.79 0)
+			(at 132.842 104.902 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
-			(at 123.19 101.6 0)
+			(at 137.16 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2668,7 +2743,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 123.19 101.6 0)
+			(at 137.16 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2679,7 +2754,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 123.19 101.6 0)
+			(at 137.16 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2690,99 +2765,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "64db9e9a-57ca-4403-9879-0fb00304a998")
+			(uuid "5cda203f-7f9f-497f-a27d-f4138070e6d4")
 		)
 		(instances
 			(project "PCB BLINK"
 				(path "/045d4c76-b8e6-4e35-9741-edeedb73b92f"
 					(reference "#FLG01")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Display_Graphic:ER_OLEDM0.91_1x-I2C")
-		(at 130.81 111.76 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "c2f4388d-5fa2-4520-b2fb-ae9ee8777709")
-		(property "Reference" "U3"
-			(at 118.11 111.76 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "ER_OLEDM0.91_1x-I2C"
-			(at 120.65 101.6 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Display:ER_OLEDM0.91_1x-I2C"
-			(at 112.776 99.06 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" "https://www.buydisplay.com/download/manual/ER-OLEDM0.91-1_Datasheet.pdf"
-			(at 88.138 97.028 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "SSD1306 OLED module, 0.91 inch, 128x32, I2C"
-			(at 104.14 94.996 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "f2ca38ff-d2c5-4f63-bc88-734681d6bb51")
-		)
-		(pin "3"
-			(uuid "4dc53118-0a10-4df0-bac6-164019b5d6a3")
-		)
-		(pin "2"
-			(uuid "1ee25f09-98bc-413e-8b50-3b7c17bf2906")
-		)
-		(pin "4"
-			(uuid "846c418c-0dc9-4f78-bb85-21cafa99e376")
-		)
-		(instances
-			(project "PCB BLINK"
-				(path "/045d4c76-b8e6-4e35-9741-edeedb73b92f"
-					(reference "U3")
 					(unit 1)
 				)
 			)
@@ -2970,14 +2958,6 @@
 				)
 			)
 		)
-	)
-	(group ""
-		(uuid "c675822a-2ac7-4489-bf7f-47062622defc")
-		(members "016ed10b-db4f-4a33-960d-d7ae80886bfe" "09212be4-ba44-488b-8277-c5c9fee62019")
-	)
-	(group ""
-		(uuid "dff674da-a664-42a4-98e7-5f4e9e2fde08")
-		(members "091d2677-27d5-42a3-9b64-099f62908d97" "8aa91f1f-615c-4e3d-a753-3d08cd6267c2")
 	)
 	(sheet_instances
 		(path "/"
