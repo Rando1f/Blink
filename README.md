@@ -40,6 +40,9 @@ there are 4 studs on the 4 corners on the inside of the case to have a 3mm clear
 the case dimensions: 95.13mm *105.75mm *35 mm
 the oled display dimensions: 20 mm* 27 mm
 hc-sro4 diameter: 20
-
 <p align="center"><img src="assests/CAD  images/cover 3-4 view.png" width="400"><img src="assests\CAD  images\noncover view.png" width="415"></p>
 
+
+#### AI use
+
+AI was only used for research purposes, and it wasn't used excessively. Rather, it was used as a resource-gathering tool so I could understand more of the project. The read.me is fully human-written, as well as the journal and the bill of materials. 
