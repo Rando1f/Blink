@@ -4,7 +4,7 @@ Author: Rando1f
 Description: a desk companion montiring desk time with an artistic flair
 Created_at: 27 / 7 / 2026
 ---
-#### Total time spent: 30 hours
+#### Total time spent: 45 hours
 ---
 ### Day 1 - getting started
 
@@ -118,3 +118,28 @@ this was fixed in the new ittiration making the flabergasted animatino occuer af
 
 
 <p align="center"><img src = "assests/Journal assests/the new state machine logic.png" width="800"></p>
+
+### DAY 7 - i can smell the end !! (pcb and CAD files)
+today mostly consisted of me creating the pcb that was dieractly copied from the breadboard demo this was moderlty easy except for checking that everything was running correctly as some concepts were fairly new to me for example net gnd as i had to connect every electronic to the same GND which was done through using the GND symbol paired with a pwr_flag.
+
+<p align="center"><img src="assests/PCB images/pcb electronic symbol.png" width="500"></p>
+
+this was then used to create the footprint which was done through kicad as well, this was easir than the previous step due to the connection already being marked for me in which after a GND ground net was poured using B.CU on the PCB to allow for a net GND throguh the whole pcb.
+
+<p align="center"><img src="assests/PCB images/pcb footprint.png"></p>
+
+
+with this being the final results (some step files were missing but they are used for cosmetic purposes only)
+
+<p align="center"><img src="assests/PCB images/3d viewer.png"></p>
+
+which this pcb is going to live in this casse designed based on rough mesurments of the hc-sro4 and oled 0.96" ssd1306 I2C screen 
+
+<img src="assests/CAD  images/cover 3-4 view.png" width="482">
+<img src="assests/CAD  images/noncover view.png" width="500">
+
+---
+
+<h1 style="text-align: center;"> ENJOY BLINK!! </h1>
+
+*T-T finally
